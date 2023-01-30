@@ -1,0 +1,23 @@
+name: Test Golang
+env:
+  CGO_ENABLED: 0
+on:
+  push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container:
+      image: golang:1.19-alpine
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install gotestsum
+        run: go install gotest.tools/gotestsum@latest
+      - name: Run gotestsum
+        run: gotestsum --junitfile report.xml --format testname ./services.example/... ./services.shared/... ./services.auth/...
+      - name: Upload gotestsum report
+        uses: actions/upload-artifact@v3
+        with:
+          name: gotestsum-report
+          path: report.xml
+          if-no-files-found: error
+          retention-days: 1

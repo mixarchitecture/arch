@@ -1,0 +1,75 @@
+version: "3.8"
+name: "mix-architecture"
+services:
+  mysql:
+    image: mariadb:10.5.8
+    container_name: mix-mysql
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USERNAME}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "${MYSQL_USERNAME}", "-p${MYSQL_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - ./__persist__/mysql:/var/lib/mysql
+    networks:
+      - default
+  nats-server:
+    image: nats:alpine
+    ports:
+      - "4222:4222"
+      - "8222:8222"
+    volumes:
+      - ./jetstream/js.conf:/etc/nats/js.conf
+    command: ["-c", "/etc/nats/js.conf"]
+  example:
+    build:
+      context: .
+      dockerfile: ./services.example/Dockerfile
+    ports:
+      - "3000:3000"
+    restart:
+      always
+    pid: host
+    env_file:
+      - .env
+    environment:
+      PROTOCOL: http
+      EXAMPLE_MYSQL_ADDRESS: ${MYSQL_ADDRESS}
+      EXAMPLE_MYSQL_USERNAME: ${MYSQL_USERNAME}
+      EXAMPLE_MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      EXAMPLE_MYSQL_DATABASE: ${MYSQL_DATABASE}
+      SERVER_HOST: 0.0.0.0
+      SERVER_PORT: 3000
+      CORS_ALLOWED_ORIGINS: "*"
+      CORS_ALLOWED_METHODS: GET,POST,PUT,DELETE,OPTIONS
+      CORS_ALLOWED_HEADERS: Content-Type,Authorization
+      CORS_ALLOW_CREDENTIALS: true
+      I18N_FALLBACK_LANGUAGE: en
+      I18N_DIR: ./src/locales
+      I18N_LOCALES: en,tr
+      NATS_URL: nats://nats-server:4222
+      NATS_STREAMS: "Example"
+      STREAMING_TOPIC_EXAMPLE_CREATED: Example.Created
+      STREAMING_TOPIC_EXAMPLE_UPDATED: Example.Updated
+    networks:
+      - default
+      - nats-server
+    depends_on:
+      mysql:
+        condition: service_healthy
+      nats-server:
+        condition: service_started
+
+networks:
+  nats-server:
+    name: nats-server

@@ -1,0 +1,8 @@
+output:
+  format: junit-xml
+  print-issued-lines: true
+
+run:
+  modules-download-mode: readonly
+  tests: true
+  go: "1.19"
