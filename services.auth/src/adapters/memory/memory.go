@@ -1,8 +1,8 @@
 package memory
 
 import (
-	memory_user "github.com/mixarchitecture/arch/auth/adapters/memory/user"
-	"github.com/mixarchitecture/arch/auth/domain/user"
+	memory_user "github.com/mixarchitecture/arch/auth/src/adapters/memory/user"
+	"github.com/mixarchitecture/arch/auth/src/domain/user"
 )
 
 type Memory interface {

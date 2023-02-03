@@ -3,7 +3,7 @@ package entity
 import (
 	"strings"
 
-	"github.com/mixarchitecture/arch/auth/domain/user"
+	"github.com/mixarchitecture/arch/auth/src/domain/user"
 )
 
 type MySQLUser struct {

@@ -3,8 +3,8 @@ package command
 import (
 	"context"
 
-	"github.com/mixarchitecture/arch/auth/config"
-	"github.com/mixarchitecture/arch/auth/domain/user"
+	"github.com/mixarchitecture/arch/auth/src/config"
+	"github.com/mixarchitecture/arch/auth/src/domain/user"
 	"github.com/mixarchitecture/arch/shared/auth/token"
 	"github.com/mixarchitecture/arch/shared/decorator"
 	"github.com/mixarchitecture/arch/shared/events"

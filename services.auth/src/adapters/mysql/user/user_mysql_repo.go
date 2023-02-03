@@ -2,7 +2,7 @@ package user
 
 import (
 	"github.com/jmoiron/sqlx"
-	"github.com/mixarchitecture/arch/auth/domain/user"
+	"github.com/mixarchitecture/arch/auth/src/domain/user"
 )
 
 type repo struct {

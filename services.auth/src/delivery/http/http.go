@@ -6,8 +6,8 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/timeout"
-	"github.com/mixarchitecture/arch/auth/app"
-	"github.com/mixarchitecture/arch/auth/delivery/http/mapper"
+	"github.com/mixarchitecture/arch/auth/src/app"
+	"github.com/mixarchitecture/arch/auth/src/delivery/http/mapper"
 	"github.com/mixarchitecture/arch/shared/i18n"
 	"github.com/mixarchitecture/arch/shared/validator"
 )

@@ -1,7 +1,7 @@
 package user
 
 import (
-	"github.com/mixarchitecture/arch/auth/delivery/http/dto"
+	"github.com/mixarchitecture/arch/auth/src/delivery/http/dto"
 )
 
 type Mapper interface {

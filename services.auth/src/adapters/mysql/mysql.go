@@ -2,8 +2,8 @@ package mysql
 
 import (
 	"github.com/jmoiron/sqlx"
-	mysql_user "github.com/mixarchitecture/arch/auth/adapters/mysql/user"
-	"github.com/mixarchitecture/arch/auth/domain/user"
+	mysql_user "github.com/mixarchitecture/arch/auth/src/adapters/mysql/user"
+	"github.com/mixarchitecture/arch/auth/src/domain/user"
 )
 
 type MySQL interface {

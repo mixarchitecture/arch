@@ -1,6 +1,6 @@
 package app
 
-import "github.com/mixarchitecture/arch/auth/app/command"
+import "github.com/mixarchitecture/arch/auth/src/app/command"
 
 type Application struct {
 	Commands Commands

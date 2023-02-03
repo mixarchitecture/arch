@@ -1,20 +1,20 @@
 package event_stream
 
 import (
-	"github.com/mixarchitecture/arch/auth/app"
-	"github.com/mixarchitecture/arch/example/src/config"
+	"github.com/mixarchitecture/arch/auth/src/app"
+	"github.com/mixarchitecture/arch/auth/src/config"
 	"github.com/mixarchitecture/arch/shared/events"
 )
 
 type Server struct {
 	app    app.Application
-	Topics config.ExampleTopics
+	Topics config.AuthTopics
 	engine events.Engine
 }
 
 type Config struct {
 	App    app.Application
-	Topics config.ExampleTopics
+	Topics config.AuthTopics
 	Engine events.Engine
 }
 

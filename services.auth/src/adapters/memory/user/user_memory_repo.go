@@ -1,6 +1,6 @@
 package user
 
-import "github.com/mixarchitecture/arch/auth/domain/user"
+import "github.com/mixarchitecture/arch/auth/src/domain/user"
 
 type repo struct {
 	userFactory user.Factory

@@ -3,8 +3,8 @@ package delivery
 import (
 	"context"
 
-	"github.com/mixarchitecture/arch/auth/app"
-	"github.com/mixarchitecture/arch/auth/config"
+	"github.com/mixarchitecture/arch/auth/src/app"
+	"github.com/mixarchitecture/arch/auth/src/config"
 	"github.com/mixarchitecture/arch/shared/events"
 	"github.com/mixarchitecture/arch/shared/i18n"
 )

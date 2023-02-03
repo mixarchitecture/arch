@@ -1,7 +1,7 @@
 package user
 
 import (
-	"github.com/mixarchitecture/arch/auth/domain/user"
+	"github.com/mixarchitecture/arch/auth/src/domain/user"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 

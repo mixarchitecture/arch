@@ -3,8 +3,8 @@ package user
 import (
 	"context"
 
-	"github.com/mixarchitecture/arch/auth/adapters/mongo/user/entity"
-	"github.com/mixarchitecture/arch/auth/domain/user"
+	"github.com/mixarchitecture/arch/auth/src/adapters/mongo/user/entity"
+	"github.com/mixarchitecture/arch/auth/src/domain/user"
 	"github.com/mixarchitecture/arch/shared/i18n"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"

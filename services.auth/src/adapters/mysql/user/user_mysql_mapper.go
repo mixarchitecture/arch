@@ -3,8 +3,8 @@ package user
 import (
 	"strings"
 
-	"github.com/mixarchitecture/arch/auth/adapters/mysql/user/entity"
-	"github.com/mixarchitecture/arch/auth/domain/user"
+	"github.com/mixarchitecture/arch/auth/src/adapters/mysql/user/entity"
+	"github.com/mixarchitecture/arch/auth/src/domain/user"
 	sqb_go "gitlab.com/ssibrahimbas/sqb.go"
 )
 

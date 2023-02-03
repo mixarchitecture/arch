@@ -1,6 +1,6 @@
 package entity
 
-import "github.com/mixarchitecture/arch/auth/domain/user"
+import "github.com/mixarchitecture/arch/auth/src/domain/user"
 
 type MongoUser struct {
 	UUID      string   `bson:"uuid"`

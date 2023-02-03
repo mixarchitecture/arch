@@ -1,6 +1,6 @@
 package mapper
 
-import "github.com/mixarchitecture/arch/auth/delivery/http/mapper/user"
+import "github.com/mixarchitecture/arch/auth/src/delivery/http/mapper/user"
 
 type Mapper struct {
 	User user.Mapper

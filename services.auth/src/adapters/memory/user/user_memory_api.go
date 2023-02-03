@@ -2,7 +2,7 @@ package user
 
 import (
 	"github.com/google/uuid"
-	"github.com/mixarchitecture/arch/auth/domain/user"
+	"github.com/mixarchitecture/arch/auth/src/domain/user"
 	"github.com/mixarchitecture/arch/shared/i18n"
 	"golang.org/x/net/context"
 )

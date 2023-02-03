@@ -1,8 +1,8 @@
 package mongo
 
 import (
-	mongo_user "github.com/mixarchitecture/arch/auth/adapters/mongo/user"
-	"github.com/mixarchitecture/arch/auth/domain/user"
+	mongo_user "github.com/mixarchitecture/arch/auth/src/adapters/mongo/user"
+	"github.com/mixarchitecture/arch/auth/src/domain/user"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 

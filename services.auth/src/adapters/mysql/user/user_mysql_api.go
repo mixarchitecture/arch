@@ -7,8 +7,8 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/mixarchitecture/arch/auth/adapters/mysql/user/entity"
-	"github.com/mixarchitecture/arch/auth/domain/user"
+	"github.com/mixarchitecture/arch/auth/src/adapters/mysql/user/entity"
+	"github.com/mixarchitecture/arch/auth/src/domain/user"
 	"github.com/mixarchitecture/arch/shared/formats"
 	"github.com/mixarchitecture/arch/shared/i18n"
 	sqb_go "gitlab.com/ssibrahimbas/sqb.go"
